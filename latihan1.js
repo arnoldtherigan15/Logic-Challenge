@@ -12,3 +12,4 @@ console.log(balikString(['hello']));
 // var kata = ['hello'];
 // var baru = kata[0].split('');
 // console.log(baru);
+
