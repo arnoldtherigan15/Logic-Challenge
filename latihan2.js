@@ -17,13 +17,15 @@ var input = [
 ];
 
 function dataHandling (input) {
-    var result = '';
     for (var i = 0; i < input.length; i++) {
-        console.log('Nomor ID: ' + input[i][0]);
-        console.log('Nama Lengkap: ' + input[i][1]);
-        console.log('TTL: '+ input[i][2]);
-        console.log('Hobi: '+ input[i][3] + '\n');
+        for (var j = 0; j < input[i].length; j++) {
+            switch (j) {
+                case 0 : console.log('Nomor ID: ' + input[i][j]); break;
+                case 1 : console.log('Nama Lengkap: ' + input[i][j]); break;
+                case 2 : console.log('TTL: '+ input[i][j] + ' ' + input[i][j+1]); break;
+                case 3 : console.log('Hobi: '+ input[i][j+1] + '\n'); break;
+            }
+        }
     }
-    return result;
 }
-console.log(dataHandling(input));
+dataHandling(input);
