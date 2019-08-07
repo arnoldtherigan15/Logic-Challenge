@@ -22,4 +22,4 @@ function dataHandling2(input) {
     console.log(input[1].slice(0,15));
 
 }
-dataHandling2(input)
+dataHandling2(input);
