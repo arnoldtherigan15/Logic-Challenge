@@ -18,22 +18,22 @@ END IF
 
 */
 
-// var angka = 3;
-// var i = 2;
-// var hasil = true;
-// while (angka > i) {
-//     if (angka % i === 0) {
-//         hasil = false;
-//         break;
-//     }
-//     i++;
-// }
+var angka = 5;
+var i = 2;
+var hasil = true;
+while (angka > i) {
+    if (angka % i === 0) {
+        hasil = false;
+        break;
+    }
+    i++;
+}
 
-// if (hasil === true) {
-//     console.log('adalah bilangan prima');
-// } else {
-//     console.log('bukan bilangan prima');
-// }
+if (hasil === true) {
+    console.log('adalah bilangan prima');
+} else {
+    console.log('bukan bilangan prima');
+}
 
 
 /*
@@ -58,13 +58,13 @@ END FOR
 //     }
 // }
 // console.log(kata[i]);
-var height = 5;
-for (var i = 0; i <= height; i++) {
-    var hasil = '';
-    for (var j = 1; j <= i; j++) {
-        hasil = hasil + j;
-    }
-    console.log(hasil);
+// var height = 5;
+// for (var i = 0; i <= height; i++) {
+//     var hasil = '';
+//     for (var j = 1; j <= i; j++) {
+//         hasil = hasil + j;
+//     }
+//     console.log(hasil);
     
-}
+// }
 
