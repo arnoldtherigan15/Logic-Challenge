@@ -6,7 +6,7 @@ Array Mastery: Circular Operation
 Nama:SEPTIAN MAULANA
 
 [INSTRUKSI]
-Akan dijalankan sebuah operasi matematika dengan urutan kali (+) dan kurang (-).
+Akan dijalankan sebuah operasi matematika dengan urutan tambah (+) dan kurang (-).
 
 Function circularOperation akan menerima satu parameter berupa array angka, dan memproses satu per satu angka tersebut.
 Proses yang dilakukan adalah mengoperasikan setiap bilangan didalamnya, menggunakan simbol +, dan - berturut-turut.
@@ -43,3 +43,19 @@ output: 0
 Simpan variabel number bentuk array tipe data angka
 Return hasil operasi + dan - secara bergantian dari variabel tersebut
 */
+function circularOperation (num) {
+    var proses = 0;
+    for (var i = 0; i < num.length; i++) {
+        if (i % 2 === 0) {
+            proses += num[i];
+        } else {
+            proses -= num[i];
+        }
+    }
+    return proses;
+}
+console.log(circularOperation([1, 2, 3, 4, 5])); // 3
+console.log(circularOperation([5, 4, 3, 2, 1, 2])); // 1
+console.log(circularOperation([1, 1, 1, 1])); // 0
+console.log(circularOperation([])); // 0
+console.log(circularOperation([0, 10, 2, 5, 7])); // -6
