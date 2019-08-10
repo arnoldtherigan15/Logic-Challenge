@@ -1,6 +1,13 @@
 function tentukanDeretGeometri(arr) {
-    // you can only write your code here!
-  }
+var pembandingAwal = arr[1] / arr[0];
+    for (var i =1; i < arr.length; i++) {
+        if (arr[i+1]/arr[i] === pembandingAwal) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
   
   // TEST CASES
   console.log(tentukanDeretGeometri([1, 3, 9, 27, 81])); // true
