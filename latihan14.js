@@ -1,12 +1,14 @@
 function tentukanDeretGeometri(arr) {
+var hasil;
 var pembandingAwal = arr[1] / arr[0];
-    for (var i =1; i < arr.length; i++) {
+    for (var i =1; i < arr.length -1; i++) {
         if (arr[i+1]/arr[i] === pembandingAwal) {
-            return true;
+            hasil = true;
         } else {
-            return false;
+            hasil = false;
         }
     }
+return hasil;
 }
   
   // TEST CASES
