@@ -1,6 +1,10 @@
 function cariMean(arr) {
-    // you can only write your code here!
-  }
+    var sum = 0;
+    for (var i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return Math.round(sum / arr.length);
+}
   
   // TEST CASES
   console.log(cariMean([1, 2, 3, 4, 5])); // 3
