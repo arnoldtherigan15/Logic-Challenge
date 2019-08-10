@@ -1,14 +1,15 @@
 function groupAnimals(animals) {
     animals.sort();
-    var result = [];
+    var result = [[]];
+    var indeksResult = 0;
     for (var i = 0; i < animals.length; i++) {
-        if (result.length === 0) {
-            result.push([animals[i]]);
-        } else if (result[result.length-1][0][0] === animals[i][0]) {
-            result[result.length-1].push(animals[i]);
+        if (result[0].length === 0) {
+            result[0].push(animals[i]);
+        } else if (result[indeksResult][0][0] === animals[i][0]) {
+            result[indeksResult].push(animals[i]);
         } else {
-            result.push([]);
-            result[result.length-1].push(animals[i]);
+            result.push([animals[i]]);
+            indeksResult++;
         }
     }
     return result;
