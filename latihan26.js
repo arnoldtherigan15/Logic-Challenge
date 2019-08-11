@@ -37,3 +37,13 @@ console.log(highestNumber([15, 32, 11, 14])); // 32
 console.log(highestNumber([5, 4, 3, 2, 1, 0])); // 5
 console.log(highestNumber([123, 321, 143, 313])); // 321
 
+// function highestNumber(numbers){
+//     var hasil = numbers[0]
+//     for (var i = 0; i<numbers.length; i++){
+//         if(numbers[i] > hasil){
+//             hasil = numbers[i]
+//         }
+//     }
+//     return hasil
+//  }
+ 
