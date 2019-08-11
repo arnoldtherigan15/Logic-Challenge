@@ -23,10 +23,32 @@ output: "ODDS: 1, 1, 1"
 input: [2, 8, 10]
 output: "EVENS: 2, 8, 10"
 [RULE]
-- Wajib menuliskan pseudocode. Tidak ada pseudocode / pseudocode tidak match dengan kode maka indikasi soal tidak diselesaikan secara pribadi dan tidak akan dinilai.
+- Wajib menuliskan pseudocode. Tidak ada pseudocode / pseudocode tidak match dengan kode maka indikasi 
+  soal tidak diselesaikan secara pribadi dan tidak akan dinilai.
 - Dilarang menggunakan Regex (.match, .test, dan sebagainya)
 - Dilarang menggunakan .map, .filter, dan .reduce!
 */
+
+function groupOddEven(num) {
+    var odd = [];
+    var even = [];
+    for (var i = 0; i<num.length; i++) {
+        if (num[i] % 2 != 0) {
+            odd.push(num[i]);
+        } else if (num[i] % 2 === 0) {
+            even.push(num[i]);
+        } 
+    }
+    if (odd.length != 0 && even.length != 0) {
+        return 'ODDS: ' + odd + ' EVENS: ' + even;
+    } else if (odd.length === 0 && even.length != 0) {
+        return 'EVENS: ' + even;
+    } else if (odd.length != 0 && even.length === 0) {
+        return 'ODDS: ' + odd;
+    } else {
+        return '\'\'';
+    }
+}
 
 // TEST CASES
 console.log(groupOddEven([1, 5, 8, 2, 3])); // "ODDS: 1, 5, 3 EVENS: 8, 2"

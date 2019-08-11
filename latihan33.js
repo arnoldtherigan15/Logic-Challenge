@@ -3,7 +3,7 @@
 Array Mastery: Circular Operation
 ===================================
 
-Nama:SEPTIAN MAULANA
+Nama: ARNOLD THERIGAN
 
 [INSTRUKSI]
 Akan dijalankan sebuah operasi matematika dengan urutan kali (+) dan kurang (-).

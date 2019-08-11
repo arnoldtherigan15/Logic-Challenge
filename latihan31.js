@@ -3,7 +3,7 @@
 Array Mastery: Love Me Not
 ==================================
 
-Nama:SEPTIAN MAULANA
+Nama: ARNOLD THERIGAN
 
 [INSTRUKSI]
 Seorang perempuan sedang menggalaui apakah seseorang menyukai dia atau tidak. Ketimbang mencabut kelopak bunga untuk menghitung jika dia suka atau tidak, perempuan tersebut membuat sebuah program.
@@ -21,6 +21,24 @@ Return 'HE LOVES ME!' jika jumlah true > false
 'GALAU' jika true=false
 
 */
+function loveMeNot(decisions) {
+    var arrTrue = [];
+    var arrFalse = [];
+    for (var i = 0; i < decisions.length; i++) {
+        if(decisions[i] === true) {
+            arrTrue.push(decisions[i]);
+        } else {
+            arrFalse.push(decisions[i])
+        }
+    }
+    if (arrTrue.length > arrFalse.length) {
+        return 'HE LOVES ME!';
+    } else if (arrTrue.length < arrFalse.length) {
+        return 'HE DOES NOT LOVE ME :(';
+    } else {
+        return 'GALAU';
+    }
+}
 
 // TEST CASES
 console.log(loveMeNot([true, false, false])); // "HE DOES NOT LOVE ME :("
