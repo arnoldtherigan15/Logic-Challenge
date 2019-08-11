@@ -44,9 +44,23 @@ Simpan variabel number bentuk array tipe data angka
 Return hasil operasi + dan - secara bergantian dari variabel tersebut
 */
 
+function circularOperation(num) {
+    var result = 0;
+    for (var i = 0; i < num.length; i++) {
+        if (i % 2 === 0) {
+            result += num[i];
+        } else if (i % 2 != 0) {
+            result -= num[i];
+        } else {
+            result = 0;
+        }
+    }
+    return result;
+}
+
 // TEST CASES
 console.log(circularOperation([1, 2, 3, 4, 5])); // 3
 console.log(circularOperation([5, 4, 3, 2, 1, 2])); // 1
 console.log(circularOperation([1, 1, 1, 1])); // 0
-console.log(circularOperation([0, 10, 2, 5, 7])); // -6
+console.log(circularOperation([0, 10, 2, 5, 7])); // -6 
 console.log(circularOperation([])); // 0
