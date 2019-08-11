@@ -3,7 +3,7 @@
 Array Mastery: Pair Up
 ==================================
 
-Nama:SEPTIAN MAULANA
+Nama: ARNOLD THERIGAN
 
 [INSTRUKSI]
 Setiap student di HACKTIV8 ditugaskan untuk membuat tim project dengan komposisi tim dua orang.
@@ -30,6 +30,18 @@ Simpan variabel Students berupa array dengan tipe data string
 Return 2 nama dalam bentuk gabungan array dengan kata hubung 'dan'
 Jika tidak habis dibagi 2 maka sisanya students berpasangan dengan Instruktur
 */
+function pairUp (students) {
+    var result = [];
+    if (students.length % 2 != 0) {
+        students.push('Instruktur');
+    }
+    for (var i = 0; i < students.length; i++) {
+        result.push(students[i] + ' dan ' + students[i+1]);
+        i++;
+    }
+    return result;
+    // return students;
+}
 
 // TEST CASES
 console.log(pairUp(['Budi', 'Badu'])); // ['Budi dan Badu']
