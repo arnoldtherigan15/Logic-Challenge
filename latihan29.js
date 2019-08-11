@@ -13,3 +13,11 @@
 // - Dilarang menggunakan method .filter, atau .reduce!
 // - Dilarang menggunakan .sort!
 // - Dilarang menggunakan built in object (Math.min, Math.max, dsb)
+
+
+// TEST CASES
+console.log(highestNumber([5, 2, 1, 4])); // 5
+console.log(highestNumber([999, 5, 0, 1, 4, 998])); // 999
+console.log(highestNumber([15, 32, 11, 14])); // 32
+console.log(highestNumber([5, 4, 3, 2, 1, 0])); // 5
+console.log(highestNumber([123, 321, 143, 313])); // 321
