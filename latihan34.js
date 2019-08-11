@@ -30,8 +30,20 @@
     result : [0,  3, 111, 9, -56, -17]
 */
 function twoArrayOperation(arr1, arr2) {
-    // your code here
-       
+    var result = [];
+    if (arr1.length < arr2.length) {
+        arr1.push(0);
+    } else if (arr2.length < arr1.length) {
+        arr2.push(0);
+    }
+    for (var i = 0; i < arr1.length; i++) {
+        if (i % 2 === 0) {
+            result.push(arr1[i] + arr2[i]);
+        } else {
+            result.push(arr1[i] - arr2[i]);
+        }
+    }
+return result;
   }
   console.log(twoArrayOperation([-4, 5, 57, 33, -90], [4, 2, 54, 24, 34])) // [ 0, 3, 111, 9, -56]
   console.log(twoArrayOperation([12, 34, 11, 23, 12], [11, 78, 45, 20, 42])) // [ 23, -44, 56, 3, 54 ]
