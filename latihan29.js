@@ -3,7 +3,9 @@
 // ==================================
 // Nama:________
 // [INSTRUKSI]
-// Function highestNumber akan menerima satu parameter berupa array yang berisikan angka, dimana dengan asumsi kemungkinan angka dari 0 - 999, dan angka dalam array minimal 3 angka, dan tidak ada angka yang bernilai sama (ini adalah info tese case, bukan harus divalidasi/dicek).
+// Function highestNumber akan menerima satu parameter berupa array yang berisikan angka, 
+// dimana dengan asumsi kemungkinan angka dari 0 - 999, dan angka dalam array minimal 3 angka, 
+// dan tidak ada angka yang bernilai sama (ini adalah info tese case, bukan harus divalidasi/dicek).
 // highestNumber akan mengembalikan angka yang terbesar dari array tersebut.
 // [CONTOH]
 // input: [4, 2, 5, 1]
@@ -14,6 +16,19 @@
 // - Dilarang menggunakan .sort!
 // - Dilarang menggunakan built in object (Math.min, Math.max, dsb)
 
+function  highestNumber(num) {
+    var tampung = 0;
+    for (var i = 0; i < num.length; i++) {
+        for (var j = 0; j < num.length; j++) {
+            if (num[j] > num[j+1]) {
+                tampung = num[j];
+                num[j] = num[j+1];
+                num[j+1] = tampung;
+            }
+        }
+    }
+    return num[num.length-1];
+}
 
 // TEST CASES
 console.log(highestNumber([5, 2, 1, 4])); // 5
