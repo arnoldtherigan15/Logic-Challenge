@@ -1,7 +1,7 @@
 /*
 HACKTIV8 Live code week 4
 
-Nama: andrawina kirana adi
+Nama: ARNOLD THERIGAN
 
 ===============================
 Soal Array 3 - Remove Duplicate

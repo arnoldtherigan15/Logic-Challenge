@@ -5,7 +5,7 @@ HACKTIV8 Final Live Coding Rocket
 British National Crisis
 =======================
 
-Name : andrawina kirana adi
+Name : ARNOLD THERIGAN
 
 Tiga narapidana kabur dari penjara London. Tiga narapidana ini memiliki nomor sel 1, 5, dan 9.
 Tiga narapidana ini bergabung dan menyatukan kekuatan dan pikiran untuk mengacau di Inggris dengan melakukan pengeboman di tempat-tempat yang berbeda.

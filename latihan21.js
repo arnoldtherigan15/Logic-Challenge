@@ -39,4 +39,4 @@ function primeNumber (start,finish) {
     }
     return result;
 }
-console.log(primeNumber(0,11));
+console.log(primeNumber(5,10));
