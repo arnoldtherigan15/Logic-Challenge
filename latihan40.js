@@ -1,7 +1,7 @@
 function changeMe(arr) {
     var currentYear = 2019;
     for (var i = 0; i < arr.length; i++) {
-        console.log((i+1) + '. ' + arr[i][0] + ' ' + arr[i][1] + ':');
+        console.log((i + 1) + '. ' + arr[i][0] + ' ' + arr[i][1] + ':');
         var object = {};
         object.firstName = arr[i][0];
         object.lastName = arr[i][1];
@@ -14,7 +14,9 @@ function changeMe(arr) {
         object.age = currentYear - arr[i][3];
         console.log(object);
     }
-   
+    if (arr.length === 0) {
+        console.log('""');
+    }
 }
 
 // TEST CASES
