@@ -1,5 +1,22 @@
 function graduates (students) {
-    // Code disini
+    var result = {};
+    var newObject;
+    for (var i = 0; i < students.length; i++) {
+        newObject = {};
+        var newArray = [];
+        var currentClass = students[i].class;
+        if (result[currentClass] === undefined) {
+            result[currentClass] = newArray;}
+        if (students[i].score > 75) {
+
+            newObject['name'] = students[i].name;
+            newObject['score'] = students[i].score;
+            result[currentClass].push(newObject);
+        }
+    }
+    
+
+    return result;
 }
 
 console.log(graduates([
