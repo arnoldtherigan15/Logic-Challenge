@@ -1,5 +1,16 @@
 function highestScore(students) {
-
+var result = {};
+    for (var i = 0; i < students.length; i++) {
+        var newObject = {};
+        // var currentScore = 0;
+        var currentClass = students[i]['class'];
+        if (!result[currentClass] || students[i]['score'] > result[currentClass]['score']) {
+            result[currentClass] = newObject;
+            newObject['name'] = students[i].name;
+            newObject['score'] = students[i].score;
+        }
+    }
+    return result;
 }
 // {
 //   foxes: { name: 'Dimitri', score: 90 },
@@ -10,12 +21,12 @@ function highestScore(students) {
 console.log(highestScore([
   {
     name: 'Dimitri',
-    score: 60,
+    score: 90,
     class: 'foxes'
   },
   {
     name: 'Alexei',
-    score: 65,
+    score: 85,
     class: 'wolves'
   },
   {
