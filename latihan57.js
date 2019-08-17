@@ -22,7 +22,23 @@
 **/
 
 function countMe(names) {
-
+    var result = {};
+    var gabung = names.join();
+    var splitArr = gabung.split('');
+    for (var i = 0; i < splitArr.length; i++) {
+        if (splitArr[i] === ',') {
+            splitArr.splice(i,1);
+        }
+    }
+    for (var j = 0; j < splitArr.length; j++) {
+        var keyName = splitArr[j];
+        if (!result[keyName]) {
+            result[splitArr[j]] = 1;
+        } else {
+            result[keyName]++;
+        }
+    }
+    return result;
 }
 
 
