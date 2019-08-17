@@ -21,7 +21,24 @@ Dilarang menggunakan built-in function:
 */
 
 function aboveAverageStudents (students) {
-
+    var result = [];
+    var totalScore = 0;
+    var average = 0;
+    for (var i = 0; i < students.length; i++) {
+        
+        totalScore += students[i].score;
+    }
+    average = Math.round(totalScore/students.length);
+    for (var j = 0; j < students.length; j++){
+        var newObject = {};
+        if (students[j].score > average) {
+            newObject.name = students[j].name;
+            newObject.score = students[j].score
+            result.push(newObject);
+        }
+        
+    }
+    return result;
 }
   
 // TEST CASE
