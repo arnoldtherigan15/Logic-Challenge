@@ -1,73 +1,69 @@
-/**
+/*
+=====================================
+Modular Functions: Calculate Number in Object
+=====================================
+[INSTRUKSI]
+Diberikan function kali, tambah, bagi, kurang, dan calculate
+Implementasikan function calculate untuk menghitung angka-angka yang ada di dalam object, operator perhitungan 
+tersedia di dalam object.
+ASUMSI:
+- keyName operand1, operand2 dan operator selalu ada
+- value dari operand1 dan operand2 selalu number
+- value dari operator berupa string: '+', '-', '*' atau '/'
+Function calculate akan me-return sebuah array yang berisi hasil perhitungan dari object tersebut.
+contoh 1:
+input: [ {
+             operand1: 5,
+             operand2: 10,
+             operator: '*'
+           },
+           {
+             operand1: 3,
+             operand2: 10,
+             operator: '-'
+           },
+           {
+             operand1: 3,
+             operand2: 10,
+             operator: '/'
+           }
+         ];
+output: [50, -7, 0.3]
+contoh 2:
+input: []
+output: []
+*/
 
-  Square Number
-
-  Diberikan sebuah function squareNumber dimana menerima inputan berupa number.
-  Function ini akan mengembalikan array multidimensi yang isi value tersebut secara
-  proses menyerupai `board snakes and ladders` (angka 1 dimulai dari KOLOM ATAS) TAPI
-  alih-alih menuliskan value angka kamu akan menuliskan simbol/karakter dengan syarat sebagai berikut:
-  - jika value merupakan kelipatan 4 maka diganti menjadi simbol '#'
-  - jika value merupakan bilangan genap maka diganti menjadi karakter 'o'
-  - jika value merupakan bilangan ganjil maka diganti menjadi karakter 'x'
-
-  Contoh 1:
-  ==========
-  input: 3
-  proses:
-          [
-            [ 1, 2, 3 ],
-            [ 6, 5, 4 ],
-            [ 7, 8, 9 ]
-          ]
-  output:
-          [
-            [x, o, x],
-            [o, x, #],
-            [x, #, x]
-          ]
-
-  Contoh 2:
-  ==========
-  input: 4
-  proses:
-        [
-          [ 1, 2, 3, 4 ],
-          [ 8, 7, 6, 5 ],
-          [ 9, 10, 11, 12 ],
-          [ 16, 15, 14, 13 ]
-        ]
-  output:
-        [
-          [ x, o, x, # ],
-          [ #, x, o, x ],
-          [ x, o, x, # ],
-          [ #, x, o, x ]
-        ]
-
-
-NOTE:
- - INPUT PARAMETER MINIMAL 3, JIKA KURANG DARI 3 MAKA RETURN 'Minimal input adalah 3'
-
-**/
-
-function squareNumber(num) {
+function kali () {
 
 }
+function tambah () {
 
-console.log(squareNumber(3));
-// [ [x, o, x],  [o, x, #], [x, #, x] ]
+}
+function kurang () {
 
-console.log(squareNumber(4));
-// [ [ x, o, x, # ],
-//   [ #, x, o, x ],
-//   [ x, o, x, # ],
-//   [ #, x, o, x ] ]
+}
+function bagi () {
 
-console.log(squareNumber(5));
-// [ [ x, o, x, #, x ],
-//   [ o, x, #, x, o ],
-//   [ x, #, x, o, x ],
-//   [ #, x, o, x, # ],
-//   [ x, o, x, #, o ] ]
+}
+function calculate () {
 
-console.log(squareNumber(2)); // Minimal input adalah 3
+}
+// TEST CASE
+console.log(calculate([ {
+    operand1: 5,
+    operand2: 10,
+    operator: '*'
+  },
+  {
+    operand1: 3,
+    operand2: 10,
+    operator: '-'
+  },
+  {
+    operand1: 3,
+    operand2: 10,
+    operator: '/'
+  }
+]));
+// output: [50, -7, 0.3]
