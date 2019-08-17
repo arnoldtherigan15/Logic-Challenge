@@ -10,20 +10,19 @@ Contoh input dan output bisa dilihat di test case.
 */
 
   
-function trainSeating (penumpang) {
+function trainSeating(penumpang) {
     var result = {};
     for (var i = 0; i < penumpang.length; i++) {
         var newObject = {};
         if (!result[penumpang[i].gerbong]) {
             result[penumpang[i].gerbong] = [];
-        } 
-        if (result[penumpang[i].gerbong]){
-            newObject.nama = penumpang[i].nama;
-            newObject.seat = penumpang[i].seat;
-            result[penumpang[i].gerbong].push(newObject);
         }
+        newObject.nama = penumpang[i].nama;
+        newObject.seat = penumpang[i].seat;
+        result[penumpang[i].gerbong].push(newObject);
+
     }
-    return result;
+  return result;
 }
 // TEST CASE
 console.log(trainSeating([
