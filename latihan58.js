@@ -10,9 +10,31 @@
  *  user aldo join pada 22 08 2018 maka validation codenya laod22092018
  */
 
-
-function addValidationCode(users){
-  
+function addValidationCode(users) {
+    var result = [];
+    var nameArr = [];
+    var dateArr = [];
+    for (var i = 0; i < users.length; i++) {
+        nameArr.push(users[i]['name'].split(''));
+        dateArr.push(users[i]['join date'].split('-'))
+    }
+    for (var j = 0; j < nameArr.length; j++) {
+        var newObject = {};
+        for (var k = 0; k < nameArr[j].length; k++) {
+            if (k % 2 === 0) {
+                var tampung = nameArr[j][k];
+                nameArr[j][k] = nameArr[j][k + 1];
+                nameArr[j][k + 1] = tampung;
+            }
+            if (nameArr[j][k] === undefined) {
+                nameArr[j].splice(k, 1);
+            }
+        }
+        newObject.name = users[j].name;
+        newObject.validationCode = nameArr[j].join('') + dateArr[j].join('');
+        result.push(newObject);
+    }
+    return result;
 }
 
 //Test case
