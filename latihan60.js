@@ -22,7 +22,22 @@ Dilarang menggunakan built-in function:
 */
 
 function aboveAverageStudents (students) {
-
+    var result = [];
+    var total = 0;
+    for(var i = 0; i < students.length; i++) {
+        total += students[i].score;
+    }
+    var average = Math.round(total/students.length);
+    for(var j = 0; j < students.length; j++) {
+        var newObject = {};
+        if (students[j].score > average) {
+            newObject.name = students[j].name;
+            newObject.score = students[j].score;
+            result.push(newObject);
+        }
+        
+    }
+    return result;
 }
 
 
@@ -40,14 +55,14 @@ console.log(aboveAverageStudents([
 //   { name: 'Viktor', score: 65 },
 //   { name: 'Alexei', score: 70 } ]
 
-// console.log(aboveAverageStudents([
-//   { name: 'Foo', score: 100 },
-//   { name: 'Bar', score: 100 },
-//   { name: 'Baz', score: 90 }
-// ]));
+console.log(aboveAverageStudents([
+  { name: 'Foo', score: 100 },
+  { name: 'Bar', score: 100 },
+  { name: 'Baz', score: 90 }
+]));
 
 // [ { name: 'Foo', score: 100 }, { name: 'Bar', score: 100 } ]
 
-// console.log(aboveAverageStudents([]));
+console.log(aboveAverageStudents([]));
 
 // [ ]
