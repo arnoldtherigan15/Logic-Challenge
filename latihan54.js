@@ -34,20 +34,34 @@ input: []
 output: []
 */
 
-function kali () {
-
+function kali (operand1,operand2) {
+   
+    return operand1 * operand2;
 }
-function tambah () {
-
+function tambah (operand1,operand2) {
+    return operand1 + operand2
 }
-function kurang () {
-
+function kurang (operand1,operand2) {
+    return operand1 - operand2
 }
-function bagi () {
-
+function bagi (operand1,operand2) {
+    return operand1 / operand2
 }
-function calculate () {
-
+function calculate (numbers) {
+    var result = [];
+    for (var i = 0; i < numbers.length; i++) {
+        if (numbers[i].operator === '*') {
+            result.push(kali(numbers[i].operand1,numbers[i].operand2));
+        } else if (numbers[i].operator === '+') {
+            result.push(tambah(numbers[i].operand1,numbers[i].operand2));
+        } else if (numbers[i].operator === '-') {
+            result.push(kurang(numbers[i].operand1,numbers[i].operand2));
+        } else if (numbers[i].operator === '/') {
+            result.push(bagi(numbers[i].operand1,numbers[i].operand2));
+        }
+    }
+    
+    return result;
 }
 // TEST CASE
 console.log(calculate([ {
