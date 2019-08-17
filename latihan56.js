@@ -16,33 +16,19 @@ Contoh:
   Output: { }
 */
 
-// function csvToObject (keys, values) {
-//   var keysArr = keys.split(',');
-//   var valuesArr = values.split(',');
-//   var obj = {};
-//   if (keys.length === 0 && values.length === 0) {
-//     return obj;
-//   }
-//   else {
-//     for (var i=0; i<keysArr.length; i++) {
-//       obj[keysArr[i]] = valuesArr[i];
-//     }
-//     return obj;
-//   }
-
-// }
-
-// console.log(csvToObject('name,phoneNumber', 'Dimitri,+666123654'));
-// // { name: 'Dimitri', phoneNumber: '+666123654' }
-
-// console.log(csvToObject('firstName,lastName,nationality', 'Sergei,Dragunov,Russia'));
-// // { firstName: 'Sergei', lastName: 'Dragunov', nationality: 'Russia' }
-
-// console.log(csvToObject('', ''));
-// // { }
 
 function csvToObject (keys, values) {
-
+    
+    var keysArr = keys.split(',');
+    var valuesArr = values.split(',');
+    var result = {};
+    if (keys === '' || values === '') {
+        return result;
+    }
+    for (var i = 0; i < keysArr.length; i++) {  
+        result[keysArr[i]] = valuesArr[i];
+    }
+    return result;
 }
 
 console.log(csvToObject('name,phoneNumber', 'Dimitri,+666123654'));
