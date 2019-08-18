@@ -33,7 +33,6 @@ function addTitle (people) {
     for (var i = 0; i < people.length; i++) {
         if (people[i][1] === 'male') {
             result.push( 'Mr. ' + people[i][0]);
-            // console.log(result);
         } else if (people[i][2] === true) {
             result.push( 'Mrs. ' + people[i][0]);
         } else {
@@ -44,7 +43,6 @@ function addTitle (people) {
         return 'No data';
     }
     return result;
-    // console.log(people[0][0]);
 }
 
 console.log(addTitle([['Sergei', 'male', true], ['Alyona', 'female', false]])); // Mr. Sergei, Ms. Alyona
