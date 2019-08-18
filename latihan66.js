@@ -1,25 +1,70 @@
-/**
-  Hapus Simbol
-
-  Diberikan sebuah function hapusSimbol(str) yang menerima satu parameter berupa
-  string. Function akan me-return string yang telah bersih dari berbagai simbol,
-  hanya menyisakan a-z, A-Z dan angka 0-9.
-
-  RULES:
-  - WAJIB MENGGUNAKAN algoritma / pseudocode
-  - DILARANG menambahkan parameter baru
-  - DILARANG menggunakan built in function .indexOf atau .include
-  - DILARANG menggunakan REGEX
- */
-
-function hapusSimbol(str) {
-
+function highestScore (students) {
+    // Code disini
 }
 
 // TEST CASE
-console.log(hapusSimbol('teEst%$4aa')); // test4aa
-console.log(hapusSimbol('dEvel0p3r s3j@@ati')); // devel0p3rs3jati
-console.log(hapusSimbol('ma@#k!an~')); // makan
-console.log(hapusSimbol('coding')); // coding
-console.log(hapusSimbol('1+3-5*2=100')); // 1352100
+console.log(highestScore([
+  {
+    name: 'Dimitri',
+    score: 90,
+    class: 'foxes'
+  },
+  {
+    name: 'Alexei',
+    score: 85,
+    class: 'wolves'
+  },
+  {
+    name: 'Sergei',
+    score: 74,
+    class: 'foxes'
+  },
+  {
+    name: 'Anastasia',
+    score: 78,
+    class: 'wolves'
+  }
+]));
 
+// {
+//   foxes: { name: 'Dimitri', score: 90 },
+//   wolves: { name: 'Alexei', score: 85 }
+// }
+
+
+console.log(highestScore([
+  {
+    name: 'Alexander',
+    score: 100,
+    class: 'foxes'
+  },
+  {
+    name: 'Alisa',
+    score: 76,
+    class: 'wolves'
+  },
+  {
+    name: 'Vladimir',
+    score: 92,
+    class: 'foxes'
+  },
+  {
+    name: 'Albert',
+    score: 71,
+    class: 'wolves'
+  },
+  {
+    name: 'Viktor',
+    score: 80,
+    class: 'tigers'
+  }
+]));
+
+// {
+//   foxes: { name: 'Alexander', score: 100 },
+//   wolves: { name: 'Alisa', score: 76 },
+//   tigers: { name: 'Viktor', score: 80 }
+// }
+
+
+console.log(highestScore([])); //{}
