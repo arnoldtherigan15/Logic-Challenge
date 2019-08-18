@@ -111,8 +111,18 @@
 // }
 // console.log(newArr);
 
-var input = ['asgfdgaddsdaffds'];
 
 
-console.log(result);
+
+function strSplit(str) {
+    var result = [[]];
+    for (var i = 0; i < str.length; i++) {
+        if (result[result.length-1].length === 5) {
+            result.push([]);
+        }
+        result[result.length-1].push(str[i]);
+    }
+    return result;
+}
+console.log(strSplit('asgfdgaddsddaffds'));
 
