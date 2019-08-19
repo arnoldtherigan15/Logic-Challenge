@@ -75,7 +75,7 @@ var data = [
   { nama: 'Harry Potter', nilai: 80, asrama: 'Griffindor' },
   { nama: 'Cho Chang', nilai: 60, asrama: 'Ravenclaw' },
   { nama: 'Pansy Parkinson', nilai: 70, asrama: 'Slyterin' },
-  { nama: 'Dean Thomas', nilai: 50, asrama: 'Griffindor' }
+  { nama: 'Dean Thomas', nilai: 50, asrama: 'Griffindor' },
   { nama: 'Ginny Weasley', nilai: 10, asrama: 'Griffindor' },
   { nama: 'Gregory Goyle', nilai: 10, asrama: 'Slyterin' },
   { nama: 'Penelope Clearwater', nilai: 10, asrama: 'Ravenclaw' },
