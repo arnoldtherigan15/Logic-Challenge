@@ -26,11 +26,13 @@ Standard kelulusan adalah minimum 70.
 
 */
 function rapotAsrama(students) {
-    var result = [{
-        asrama: students[0].asrama,
-        gagal: [],
-        lulus: []
-    }];
+    var result = [
+        {
+            asrama: students[0].asrama,
+            gagal: [],
+            lulus: []
+        }
+    ];
     var isFind = false;
     for (var i = 0; i < students.length; i++) {
         for (var j = 0; j < result.length; j++) {
@@ -46,22 +48,22 @@ function rapotAsrama(students) {
                     newObject['gagal'].push(students[i].nama);
                 }
                 isFind = true;
-                
-            }       
-            else {
+            } else {
                 if (students[i].nilai >= 70) {
                     result[j]['lulus'].push(students[i].nama);
-                    // result.push(newObject);
                 } else {
                     result[j]['gagal'].push(students[i].nama);
-                    // result.push(newObject);
                 }
             }
-            if (isFind === true) {
-                result.push(newObject);
+            if (result[j].asrama === students[i].asrama) {
+                isFind = false;
+                break;
             }
         }
-
+        if (isFind === true) {
+            result.push(newObject);
+            isFind = false;
+        }
     }
     return result;
 }
