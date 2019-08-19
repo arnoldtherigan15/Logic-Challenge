@@ -76,10 +76,10 @@ var data = [
   { nama: 'Cho Chang', nilai: 60, asrama: 'Ravenclaw' },
   { nama: 'Pansy Parkinson', nilai: 70, asrama: 'Slyterin' },
   { nama: 'Dean Thomas', nilai: 50, asrama: 'Griffindor' }
-//   { nama: 'Ginny Weasley', nilai: 10, asrama: 'Griffindor' },
-//   { nama: 'Gregory Goyle', nilai: 10, asrama: 'Slyterin' },
-//   { nama: 'Penelope Clearwater', nilai: 10, asrama: 'Ravenclaw' },
-//   { nama: 'Tom Marvolo Riddle', nilai: 90, asrama: 'Slyterin' }
+  { nama: 'Ginny Weasley', nilai: 10, asrama: 'Griffindor' },
+  { nama: 'Gregory Goyle', nilai: 10, asrama: 'Slyterin' },
+  { nama: 'Penelope Clearwater', nilai: 10, asrama: 'Ravenclaw' },
+  { nama: 'Tom Marvolo Riddle', nilai: 90, asrama: 'Slyterin' }
 ];
 
 console.log(rapotAsrama(data));
