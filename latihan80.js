@@ -45,15 +45,13 @@ function inventarisKeran (str) {
     }
     var berjalan = tempArrow.length;
     var tidakJalan = tempQue.length;
-    var resultBerhasil = tempArrow.join(',');
-    var resultGagal = tempQue.join(',');
     if (tempQue.length === 0) {
         return 'Semua keran berjalan dengan baik';
     } else if (tempArrow.length === 0) {
         return 'Semua keran rusak';
     }
      else {
-         return 'terdapat ' + berjalan + ' keran yang berjalan nomor(' + resultBerhasil + ') , dan ' + tidakJalan + ' keran rusak nomor (' + resultGagal + ')';
+         return 'terdapat ' + berjalan + ' keran yang berjalan nomor(' + tempArrow + '), dan ' + tidakJalan + ' keran rusak nomor (' + tempQue + ')';
      }
 }
 console.log(inventarisKeran('XX^XX^XX^XX?XX^XX'));
