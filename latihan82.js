@@ -14,23 +14,19 @@
 // 3. dilarang menggunakan map, filter, reduce, apply
 
 function maxSubset(arr) {
-    var res = [];
     for (var i = 0; i < arr.length; i++) {
-        var nilaiAwal = arr[i];
-        for (var j = 0; j < arr.length; j++) {
-            var isFind = false;
-
-            if(nilaiAwal < arr[j]) {
-                isFind = true;
+        for (var j = i+1; j < arr.length; j++) {
+            if (arr[i] < arr[j]) {
+                var temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
             }
         }
-        if (isFind === true) {
-            res.push(arr[i]);
-        }
     }
-    console.log(res);
+    // return arr[arr.length-1] + arr[arr.length-2];
+    return arr;
 }
 // TEST CASE
 console.log(maxSubset([-2, 1, 3, -4, 5])); // 8
-// console.log(maxSubsetSum([-1, 2, 5, 7])); // 12
-// console.log(maxSubsetSum([943,3893,43,33,394,384843,3849464,5725474,27,485947,474262]));// 9574938
+// console.log(maxSubset([-1, 2, 5, 7])); // 12
+// console.log(maxSubset([943,3893,43,33,394,384843,3849464,5725474,27,485947,474262]));// 9574938
