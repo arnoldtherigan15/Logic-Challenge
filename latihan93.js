@@ -25,7 +25,7 @@ function cariPelaku(str) {
     }
 }
 // TEST CASES
-console.log(cariPelaku('mabcvabc')); // 2
+console.log(cariPelaku('madbcvadbc')); // 2
 console.log(cariPelaku('abcdabdc')); // 1
 console.log(cariPelaku('bcabcac')); // 1
 console.log(cariPelaku('abcabcabc')); // 3
