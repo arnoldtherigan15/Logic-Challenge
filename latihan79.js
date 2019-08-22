@@ -23,4 +23,4 @@ function hitungKata(str) {
     }
     return count;
 }
-console.log(hitungKata(' I have a dream a          song to                sing     '));
+console.log(hitungKata(' I have a dream a   song to    sing     '));

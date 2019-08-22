@@ -16,17 +16,15 @@
 function maxSubset(arr) {
     for (var i = 0; i < arr.length; i++) {
         for (var j = i+1; j < arr.length; j++) {
-            if (arr[i] < arr[j]) {
-                var temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
+            if (arr[i] > arr[j]) {
+                [arr[i],arr[j]] = [arr[j],arr[i]];
             }
         }
     }
     // return arr[arr.length-1] + arr[arr.length-2];
-    return arr;
+    return arr[arr.length-1] + arr[arr.length-2];
 }
 // TEST CASE
 console.log(maxSubset([-2, 1, 3, -4, 5])); // 8
-// console.log(maxSubset([-1, 2, 5, 7])); // 12
-// console.log(maxSubset([943,3893,43,33,394,384843,3849464,5725474,27,485947,474262]));// 9574938
+console.log(maxSubset([-1, 2, 5, 7])); // 12
+console.log(maxSubset([943,3893,43,33,394,384843,3849464,5725474,27,485947,474262]));// 9574938
