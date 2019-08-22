@@ -75,14 +75,12 @@ var products = [
     }
   ]
   
-function cart (shops) {
+function cart(shops) {
     var result = {
         title: 'Nota Pembayaran',
         carts: [],
         total: 0
-    }    
-    // console.log(result);
-   
+    }
     for (var i = 0; i < shops.length; i++) {
         var newObject = {
             id: 0,
@@ -94,21 +92,26 @@ function cart (shops) {
             if (shops[i] === products[j]['id']) {
                 newObject['id'] = products[j]['id'];
                 newObject['title'] = products[j]['title'];
-                newObject['qty'] += 1;
-                newObject['subtotal'] = newObject['qty']*products[j]['price'];
+                newObject['qty'] = 1;
+                newObject['subtotal'] = newObject['qty'] * products[j]['price'];
 
             }
-
+            if (result['carts'].length === 0) {
+              result['carts'].push(newObject);
+          }
+            for (var k = 0; k < result['carts'].length; k++) {
+                if (result['carts'][k]['id'] === products[j]['id']) {
+                    result['carts'][k]['qty'] += 1;
+                    result['carts'][k]['subtotal'] *= result['carts'][k]['qty'];
+                } else {
+                    result['carts'].push(newObject);
+                }
+            }
         }
-        // result['total'] += newObject['subtotal'];
-
-            result['carts'].push(newObject);
-        
     }
-    // console.log(result['carts'][]['id']);
     return result;
 }
-  
+
 console.log(cart([1, 1, 2, 3, 3, 3]))
 /*
     {
