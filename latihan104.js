@@ -31,7 +31,34 @@ output: 'genap yang paling banyak ada di baris ke-2'
 */
 
 function coordinateTracker(array, search) {
-  
+    var result = [];
+    var find;
+    for (var i = 0; i < array.length; i++) {
+        var count = 0;
+        for (var j = 0; j < array[i].length; j++) {
+            if (search === 'genap') {
+                if (array[i][j] % 2 === 0) {
+                    count++;
+                }
+            } else if (search === 'ganjil') {
+                if (array[i][j] % 2 != 0) {
+                    count++;
+                }
+            } else if (search === 'x') {
+              if (array[i][j] === 'x') {
+                  count++;
+              }
+          }
+        }
+        result.push(count);
+    }
+    var maxNum = Math.max.apply(Math, result);
+    for (var i = 0; i < result.length; i++) {
+        if (result[i] === maxNum) {
+            find = i;
+        }
+    }
+    return `${search} yang paling banyak ada di baris ke-${find+1}`;
 }
 
 
