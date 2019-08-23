@@ -22,9 +22,31 @@ proses: akan mencari angka ganjil terkecil, karena tidak ada bilangan ganjil
 output: -1
 */
 
-function ganjilTerkecil(array) {
+function ganjilArray(array) {
+    var ganjil = [];
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] % 2 != 0) {
+            ganjil.push(array[i]);
+        }
+    }
 
+    return ganjil;
 }
+function ganjilTerkecil(array) {
+    var array = ganjilArray(array);
+    if (array.length === 0) {
+        return -1;
+    }
+    for (var i = 0; i < array.length; i++) {
+        for (var j = i + 1; j < array.length; j++) {
+            if (array[i] > array[j]) {
+                [array[i],array[j]] = [array[j],array[i]];
+            }
+        }
+    }
+    return array[0];
+}
+
 
 
 console.log(ganjilTerkecil([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])); // 1
