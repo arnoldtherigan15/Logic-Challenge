@@ -1,18 +1,18 @@
-// function cekPrima (num) {
-//     var counter = 0;
-//     for (var i = 2; i < num; i++) {
-//         if (num % i === 0) {
-//             counter++;
-//         }
-//     }
-//     if (num === 1) {
-//         return false;
-//     } else if (counter === 0) {
-//         return true;
-//     } else {
-//         return false;
-//     }
-// }
+function cekPrima (num) {
+    var counter = 0;
+    for (var i = 2; i < num; i++) {
+        if (num % i === 0) {
+            counter++;
+        }
+    }
+    if (num === 1) {
+        return false;
+    } else if (counter === 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
 function cekPrima (num) {
     var counter = 0;
     if (num === 0) {

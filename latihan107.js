@@ -1,65 +1,55 @@
-/**
+/*
+======================
+Counter Char Recursive
+======================
 
-******************************
-PAIR PRIME RECURSIVE
-******************************
+[INSTRUCTION]
+counterCharRecursive adalah sebuah function recursive yang menerima dua parameter yaitu array dan string.
+function ini akan mereturn jumalah char yang sesuai dengan parameter search.
 
-Diberikan sebuah function pairPrime yang memiliki satu parameter bertipe number.
-Function ini akan mengembalikan jumlah pasangan prima dimana pasangan prima tersebut
-adalah gabungan index 0 + index terakhir, index 1 + index terakhir - 1, dst.
-JIKA angka tidak memiliki pasangan MAKA dipasangkan dengan angka 1
+[EXAMPLE]
+input: ['ada', 'apa', 'ana', 'ada']
+search: 'a'
 
-Contoh 1:
-----------
-input: 2345
-output: 0
-penjelasan:
-  - index[0] + index[terakhir] => 25
-  - index[1] + index[terakhir - 1] => 34
+function akan mencari jumlah a dalam input
+result: 8
 
-  karena pasangan prima tidak ditemukan maka output 0
+[RULE]
+1. WAJIB menggunakan metode recursive
+2. HANYA boleh menggunakan SATU looping
+3. dilarang menggunakan indexOf(), find(), filter()
+4. dilarang menggunakan regex
+*/
+// FOR BIASA
+// function counterCharRecursive(input, search) {
+//     var count = 0;
+//     for (var i = 0; i < input.length; i++) {
+//         for (var j = 0; j < input[i].length; j++) {
+//             if (input[i][j] === search) {
+//                 count++
+//             }
+//         }
+//     }
+//     return count;
+// }
+// COBA BUAT FUNGSI REKURSIF. TAPI BELUM BISA AKUNYA :(
+function counterCharRecursive(input, search) {
+    var count = 0;
+    if (input.length === 0) {
+        return count;
+    } else {
+        for (var i = 0; i < input[0].length; i++) {
+                if (input[0][i] === search) {
+                count++;
+                }
+            }
+            return count + counterCharRecursive(input.slice(1), search);
+        }
+    }
 
-Contoh 2:
----------
-input: 13351
-output: 2
-penjelasan:
-  - index[0] + index[terakhir] => 11
-  - index[1] + index[terakhir-1] => 35
-  - karena index[2] merupakan index[terakhir-2] (tidak memiliki pasangan)
-    maka angka ini akan dipasangkan dengan angka 1 => 31
-
-  karena pasangan prima adalah 11 dan 31
-
-Contoh 3:
-----------
-input: 2375
-output: 1
-penjelasan:
-  - index[0] + index[terakhir] => 25
-  - index[1] + index[terakhir-1] => 37
-
-  karena pasangan prima adalah 37
-
-
-
-RULES
-=====
-  - Wajib menggunakan metode rekursif
-  - Dilarang menambahkan parameter baru
-  - PROSES LOOP HANYA BOLEH 1 KALI
-  - Dilarang membuat variable di luar function pairPrime
-  - Dilarang mengubah tipe data parameter saat function dipanggil kembali
-  - Dilarang membuat function didalam function yang bertujuan untuk melakukan rekursif
-
-**/
-
-function pairPrime(num) {
-    // your code here
-  }
-  
-  
-  console.log(pairPrime('2345')) // 0
-  console.log(pairPrime('2375')) // 1
-  console.log(pairPrime('13351')) // 2
-  console.log(pairPrime('42131')); // 3
+console.log(counterCharRecursive(['ada', 'apa', 'ana', 'ada'], 'a')) // 8
+console.log(counterCharRecursive(['xxxxoxoxoxoxoxoxxxooooo'], 'x')) // 12
+console.log(counterCharRecursive(['b', 'o', 'l', 'd', 'f', 'o', 'x'], 'l')) // 1
+console.log(counterCharRecursive(['terima', 'kasih', 'sudah', 'selalu', 'berjuang'], 's')) // 3
+var kata = ['ada', 'apa', 'ana', 'ada'];
+// console.log(kata.slice(1));
