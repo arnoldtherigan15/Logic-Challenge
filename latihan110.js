@@ -30,16 +30,16 @@ function angkaTerbesar(array) {
     }
     if (array.length === 1) {
         return array[0];
-    } else {
+    } 
         if (array[0] > array[1]) {
-            return array[0];
-        } else {
+            array[1] = array[0];
+        } 
             return angkaTerbesar(array.slice(1));
-        }
+        
         
     }
     // console.log(array.slice(1));
-}
+
 
 // TEST CASES
 console.log(angkaTerbesar([2, 3, 7, 6, 5])) // 7

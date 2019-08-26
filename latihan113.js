@@ -1,0 +1,98 @@
+/**
+
+******************************
+ODD PAIR FIRST LAST RECURSIVE
+******************************
+
+Diberikan sebuah function oddPairFirstLast yang memiliki satu parameter bertipe number.
+Function ini akan mengembalikan hasil penjumlahan nilai pasangan yang ganjil dimana pasangan ganjil tersebut
+adalah gabungan index 0 + index terakhir, index 1 + index terakhir - 1, dst.
+JIKA angka tidak memiliki pasangan MAKA dipasangkan dengan angka 1
+
+Contoh 1:
+----------
+input: 2345
+output: 25
+penjelasan:
+  - index[0] + index[terakhir] => 25
+  - index[1] + index[terakhir - 1] => 34
+
+  karena pasangan yang ganjil hanya 25 maka 25 + 0 => function akan me-return 25
+
+Contoh 2:
+---------
+input: 23351
+output: 87
+penjelasan:
+  - index[0] + index[terakhir] => 21
+  - index[1] + index[terakhir-1] => 35
+  - karena index[2] merupakan index[terakhir-2] (tidak memiliki pasangan)
+    maka angka ini akan dipasangkan dengan angka 1 => 31
+
+  karena pasangan ganjil adalah 21, 35 dan 31 maka 21 + 35 + 31 => function akan me-return 87
+
+Contoh 3:
+----------
+input: 2335
+output: 58
+penjelasan:
+  - index[0] + index[terakhir] => 25
+  - index[1] + index[terakhir-1] => 33
+
+  karena pasangan ganjil adalah 25 dan 33 maka 25 + 33 => function akan me-return 58
+
+
+
+RULES
+=====
+  - Wajib menggunakan metode rekursif
+  - Dilarang menambahkan parameter baru
+  - Dilarang membuat variable di luar function oddPairFirstLast
+  - Dilarang mengubah tipe data parameter
+  - Dilarang membuat function didalam function yang bertujuan untuk melakukan rekursif
+
+**/
+
+// function oddPairFirstLast(num) {
+//     var temp = 0;
+//     for (var i = 0; i < String(num).length; i++) {
+//         if (String(num).length % 2 != 0) {
+//                 if (i === Math.floor((String(num).length-1)/2)) {
+//                     if (Number(String(num)[i] + '1') % 2 != 0) {
+//                         temp += Number(String(num)[i] + '1');
+//                     }
+//                 } else if (Number(String(num)[i] + String(num)[String(num).length-1-i]) % 2 != 0 && i <= Math.floor((String(num).length-1)/2) ) {
+//                     temp += Number(String(num)[i] + String(num)[String(num).length-1-i]);
+//                 }
+//         }
+//         else {
+//             if (Number(String(num)[i] + String(num)[String(num).length-1-i]) % 2 != 0 && i <= Math.floor((String(num).length-1)/2) ) {
+//                 temp += Number(String(num)[i] + String(num)[String(num).length-1-i]) ;
+//             }
+//         }
+//     }
+//     return temp;
+// }
+function oddPairFirstLast(num) {
+    if (String(num).length === 0) {
+        return 0;
+    } else {
+        if (String(num).length === 1){
+            if (Number(String(num)[0] + '1') % 2 != 0) {
+                return (Number(String(num)[0] + '1'))
+            }
+        }
+        if (Number(String(num)[0] + String(num)[String(num).length-1]) % 2 != 0) {
+
+            return (Number(String(num)[0] + String(num)[String(num).length-1])) + oddPairFirstLast(String(num).slice(1,-1));
+        }
+        return oddPairFirstLast(String(num).slice(1,-1));
+    }
+}
+// var angka = '2345'
+// console.log(angka.slice(1,-1));
+
+console.log(oddPairFirstLast(2345)) // 25
+console.log(oddPairFirstLast(2335)) // 58
+console.log(oddPairFirstLast(23351)) // 87
+console.log(oddPairFirstLast(42548)); //51
