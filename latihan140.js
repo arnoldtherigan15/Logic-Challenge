@@ -1,42 +1,58 @@
 /*
-=================================
-Recursive Mastery : Data Reducer
-=================================
-Nama:________
-[INSTRUKSI]
-Diberikan sebuah function dataReducer yang menerima satu parameter berupa string.
-Function akan memproses string dengan mengecek secara alphabet urutan yang dimulai dari karakter pertama.
-Apabila ditemukan karakter yang bukan merupakan alphabet setelahnya, karakter tersebut di skip.
-Function akan mereturn karakter apa saja yang di-skip, dalam bentuk string dibatasi dengan koma.
-[CONTOH]
-input: abcdxefgh5wi menjadi abcdefghi,
-proses: kita meng-skip x karena setelah d harusnya e, dan 5 dan w karena setelah h harusnya i.
-output: 'x,5,w'
-input: opqrstu menjadi opqrstu,
-proses: tidak ada yang terskip
-output: ''
-input: acdefghij => a
-proses: kita meng-skip c,d,e,f,g,h,i,j karena setelah a seharusnya b
-output: c,d,e,f,g,h,i,j
-*/
+ * ////////////////
+ * changeXRecursive
+ * ////////////////
+ * Function ini harus dikerjakan dengan menggunakan rekursif.
+ * Function ini menerima dua parameter, yaitu:
+ *  1. data yang merupakan string dari number
+ *  2. jenis yang merupakan string berisi antara ganjil dan genap
+ * 
+ * Function akan merubah angka yang sesuai dengan jenis dari parameter yang diterima (ganjil atau genap) menjadi (10 - angka tersebut).
+ * Kecuali angka 0 yang tetap menjadi 0
+ * 
+ * Misal:
+ *  - jika jenis ganjil dan angkanya adalah 3 maka akan menjadi 7 (10 - 3).
+ *  - jika jenis genap dan angkanya adalah 4 maka akan menjadi 6 (10 - 4).
+ *  - jika jenis ganjil dan angkanya adalah 6 maka tidak berubah.
+ * 
+ * 
+ * Outputnya adalah dalam bentuk string
+ * 
+ * [EXAMPLE]
+ * Input: data = 012345678922468 dan jenis = ganjil
+ * Process: Karena jenisnya ganjil maka setiap bilangan ganjil diubah menjadi (10 - bilangan tersebut)
+ * Output: 092745638122468
+ *  
+ * [RULES]
+ * 1. Dilarang mengubah tipe parameter function
+ * 2. Dilarang membuat function diluar function yang disediakan
+ * 3. Wajib menggunakan rekursif
+ */
 
-function dataReducer (data) {
-    var kamus = 'abcdefghijklmnopqrstuvwxyz';
-    var result = '';
-    // console.log(data.indexOf(data[i]));
-    
-    for (var i = 0; i < data.length; i++) {
-        
-            if (data.indexOf(data[i]) != kamus.indexOf(data[i])) {
-                result += data[i];
+function changeXRecursive(data, jenis) {
+    if (data.length === 0) {
+        return '';
+    } else {
+        if (jenis === 'ganjil') {
+            if (data[0] % 2 != 0) {
+                return String(10 - Number(data[0])) + changeXRecursive(data.slice(1),jenis);
             }
-        
+            else {
+                return data[0] + changeXRecursive(data.slice(1),jenis);
+            }
+        }
+        if (jenis === 'genap') {
+            if (data[0] % 2 === 0 && data[0] != 0) {
+                return String(10 - Number(data[0])) + changeXRecursive(data.slice(1),jenis);
+            }
+            else {
+                return data[0] + changeXRecursive(data.slice(1),jenis);
+            }
+        }
     }
-    return result;
 }
-  
 
-console.log(dataReducer('abcdxefgh5wi')) // 'x,5,w'
-// console.log(dataReducer('opqrstu')) // ''
-// console.log(dataReducer('acdefghij')) // 'c,d,e,f,g,h,i,j'
-// console.log(dataReducer('testu')) // 'e,s,t'
+
+console.log(changeXRecursive('012345678922468', 'ganjil')); // 092745638122468
+console.log(changeXRecursive('0123456789', 'genap')); // 0183654729
+  
