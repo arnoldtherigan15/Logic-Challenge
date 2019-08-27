@@ -1,5 +1,12 @@
 function hitungJumlahKata(kalimat) {
-    // you can only write your code here!
+    if (kalimat.length === 1) {
+        return 1;
+    } else {
+        if (kalimat[0] === ' ') {
+            return 1 + hitungJumlahKata(kalimat.slice(1));
+        }
+        return hitungJumlahKata(kalimat.slice(1));
+    }
 }
 
 // TEST CASES
