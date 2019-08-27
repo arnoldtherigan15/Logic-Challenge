@@ -24,11 +24,21 @@ output:
 - Dilarang menggunakan .indexOf(), .split(), .filter(), .map(), dan .slice()
 */
 
-function economyChangeSummary (tradeActivity) {
+function economyChangeSummary(tradeActivity) {
     var bankAccount = [
-      { name: 'Jeff Bezos', deposit: 100000, owner: 'Amazon' },
-      { name: 'Jack Ma', deposit: 90000, owner: 'Alibaba' },
-      { name: 'Larry Page', deposit: 95000, owner: 'Google' }
+        {
+            name: 'Jeff Bezos',
+            deposit: 100000,
+            owner: 'Amazon'
+        }, {
+            name: 'Jack Ma',
+            deposit: 90000,
+            owner: 'Alibaba'
+        }, {
+            name: 'Larry Page',
+            deposit: 95000,
+            owner: 'Google'
+        }
     ];
     var newArr = [];
     for (var i = 0; i < tradeActivity.length; i++) {
@@ -37,12 +47,11 @@ function economyChangeSummary (tradeActivity) {
             var temp = '';
             newArr[i].push([]);
             for (var k = 0; k < tradeActivity[i][j].length; k++) {
-               
+
                 if (tradeActivity[i][j][k] === '+' || tradeActivity[i][j][k] === '%' || tradeActivity[i][j][k] === '-') {
                     newArr[i][j].push(temp);
                     temp = '';
-                }
-                else {
+                } else {
                     temp += tradeActivity[i][j][k];
                 }
                 if (tradeActivity[i][j][k] === '+') {
@@ -53,31 +62,34 @@ function economyChangeSummary (tradeActivity) {
             }
         }
     }
-    // console.log(newArr);
     var result = [];
     for (var i = 0; i < newArr.length; i++) {
         for (var j = 0; j < newArr[i].length; j++) {
-          
-          for (var k = 0; k < bankAccount.length; k++) {
-            if (bankAccount[k]['name'] === newArr[i][j][0]) {
-              if(newArr[i][j][1] === '+') {
-                bankAccount[k]['deposit'] += ((bankAccount[k]['deposit'])*Number(newArr[i][j][2]))/100;
-                result.push({name: newArr[i][j][0], deposit: bankAccount[k]['deposit'], owner: bankAccount[k]['owner']})
-                
-              } else {
-                bankAccount[k]['deposit'] -= ((bankAccount[k]['deposit'])*Number(newArr[i][j][2]))/100;
-                result.push({name: newArr[i][j][0], deposit: bankAccount[k]['deposit'], owner: bankAccount[k]['owner']})
-              }
-              
+            for (var k = 0; k < bankAccount.length; k++) {
+                if (bankAccount[k]['name'] === newArr[i][j][0]) {
+                    if (newArr[i][j][1] === '+') {
+                        bankAccount[k]['deposit'] += (
+                            (bankAccount[k]['deposit']) * Number(newArr[i][j][2])
+                        ) / 100;
+                        result.push({name: newArr[i][j][0],
+                            deposit: bankAccount[k]['deposit'],
+                            owner: bankAccount[k]['owner']
+                        })
+                    } else {
+                        bankAccount[k]['deposit'] -= (
+                            (bankAccount[k]['deposit']) * Number(newArr[i][j][2])
+                        ) / 100;
+                        result.push({name: newArr[i][j][0],
+                            deposit: bankAccount[k]['deposit'],
+                            owner: bankAccount[k]['owner']
+                        })
+                    }
+
+                }
             }
-          }
-          
-          
         }
     }
     return result;
-    
-    
 }
 console.log(economyChangeSummary([
   ['Jeff Bezos+5%', 'Larry Page+10%', 'Jeff Bezos-3%'],
