@@ -1,33 +1,37 @@
-function economyChangeSummary (tradeActivity) {
-    var bankAccount = [
-        { name: 'Jeff Bezos', deposit: 100000, owner: 'Amazon' },
-        { name: 'Jack Ma', deposit: 90000, owner: 'Alibaba' },
-        { name: 'Larry Page', deposit: 95000, owner: 'Google' }
-      ]
-    //split input
-    var output = []
-    for (var i=0; i<tradeActivity.length; i++) {
-        var res = []
-        for (var j=0; j<tradeActivity[i].length; j++) {
-            var temp = '';
-            for (var k=0; k<tradeActivity[i][j].length; k++) {
-                if (tradeActivity[i][j][k] === '+' || tradeActivity[i][j][k] === '-' || tradeActivity[i][j][k] === '%') {
-                    res.push(temp);
-                    break;
-                }
-                temp += tradeActivity[i][j][k];
-            }
-            output.push(res);
-            res = [];
-        } 
-        
-        console.log(output); 
-    } 
-    
+/*
+
+Diberikan sebuah function tukar besar kecil yang akan
+mengembalikan nilai yang terbalik dari a sampai z
+
+example:
+1. input : 'Halo'
+   output : 'hALO'
+
+RULES
+=====
+- Wajib menggunakan metode rekursif
+- Dilarang menambahkan parameter baru
+- Dilarang membuat variable di luar function tukarBesarKecil
+- Dilarang mengubah tipe data parameter
+- Dilarang membuat function didalam function yang bertujuan untuk melakukan rekursif
+
+*/
+
+function tukarBesarKecil(kalimat) {
+    if (kalimat.length === 0) {
+        return '';
+    } else {
+        if (kalimat[0].toLowerCase() === kalimat[0]) {
+            return kalimat[0].toUpperCase() + tukarBesarKecil(kalimat.slice(1));
+        } else {
+            return kalimat[0].toLowerCase() + tukarBesarKecil(kalimat.slice(1));
+        }
+    }
 }
-console.log(economyChangeSummary([
-  ['Jeff Bezos+5%', 'Larry Page+10%', 'Jeff Bezos-3%'],
-  // ['Larry Page+2%', 'Larry Page-1%'],
-  // ['Jack Ma+4%'],
-  // ['Larry Page-8%', 'Jack Ma+20%', 'Jeff Bezos-3%', 'Jeff Bezos+8%']
-]))
+
+// TEST CASES
+console.log(tukarBesarKecil('Hello World')); // "hELLO wORLD"
+console.log(tukarBesarKecil('I aM aLAY')); // "i Am Alay"
+console.log(tukarBesarKecil('My Name is Bond!!')); // "mY nAME IS bOND!!"
+console.log(tukarBesarKecil('IT sHOULD bE me')); // "it Should Be ME"
+console.log(tukarBesarKecil('001-A-3-5TrdYW')); // "001-a-3-5tRDyw"
