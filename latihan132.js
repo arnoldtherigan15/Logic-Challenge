@@ -17,8 +17,12 @@ function angkaTerbesar(array) {
         return -1;
     }
     if (array.length === 1) {
+        // console.log(array);
+        
         return array[0];
     } else {
+        // console.log(array);
+        
         if (array[1] > array[0]) {
             array[0] = array[1];
         } else {
@@ -31,6 +35,6 @@ function angkaTerbesar(array) {
 
 // TEST CASES
 console.log(angkaTerbesar([2, 3, 7, 6, 5])) // 7
-console.log(angkaTerbesar([9, 3, 7, 4, 1])) // 9
-console.log(angkaTerbesar([2, 1, 7, 2, 8])) // 8
-console.log(angkaTerbesar([])) // -1
+// console.log(angkaTerbesar([9, 3, 7, 4, 1])) // 9
+// console.log(angkaTerbesar([2, 1, 7, 2, 8])) // 8
+// console.log(angkaTerbesar([])) // -1

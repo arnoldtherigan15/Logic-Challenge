@@ -21,8 +21,8 @@ function duplicateDetector(arr) {
             }
         }
     }
-    // console.log(temp);
-    // console.log(count);
+    console.log(temp);
+    console.log(count);
     var result = {
         duplicate: [],
         single:[]
